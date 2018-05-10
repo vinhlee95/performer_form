@@ -1,0 +1,33 @@
+.Form {
+   width: 60%;
+   margin: 20px auto;
+   border: .5px solid lightgrey;
+   border-radius: 5px;
+   padding: 10px 10px;
+}
+
+label {
+   font-weight: 600;   
+}
+
+.Field {
+   display: flex;
+   flex-direction: column;
+}
+.nameRow, .addressRow, .locationRow {
+   display: grid;
+   grid-gap: 20px;
+}
+
+.nameRow {
+   grid-template-columns: 1fr 1fr;
+}
+
+.addressRow {
+   grid-template-columns: 3fr 1fr;
+   margin-bottom: 20px;
+}
+
+.locationRow {
+   grid-template-columns: 1fr 3fr;
+}
