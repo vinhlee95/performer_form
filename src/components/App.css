@@ -63,3 +63,9 @@ img {
 .submitButton:hover {
    background-color: rgb(71, 197, 71);
 }
+
+@media only screen and (max-width: 768px) {
+   .Form {
+      min-width: 480px;
+   }
+}
