@@ -1,5 +1,5 @@
 .Form {
-   width: 60%;
+   width: 50%;
    margin: 20px auto;
    border: .5px solid lightgrey;
    border-radius: 5px;
@@ -8,6 +8,19 @@
 
 label {
    font-weight: 600;   
+}
+
+.title {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+img {
+   width: 25px;
+   height: 25px;
+   margin-right: 5px;
 }
 
 .Field {
@@ -30,4 +43,23 @@ label {
 
 .locationRow {
    grid-template-columns: 1fr 3fr;
+}
+
+.submitButton {
+   width: 100%;
+   background-color: green;
+   border: 1px solid green;
+   border-radius: 5px;
+   color: white;
+   font-size: 20px;
+   padding-top: 15px;
+   padding-bottom: 15px;
+   margin-top: 20px;
+   font-weight: 500;
+   cursor: pointer;
+   transition: .3s;
+}
+
+.submitButton:hover {
+   background-color: rgb(71, 197, 71);
 }
