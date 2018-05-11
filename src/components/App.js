@@ -5,9 +5,14 @@ import InfoLogo from '../images/information-button.svg';
 import LocationLogo from '../images/location-button.svg';
 import CheckLogo from '../images/check-button.svg';
 import SearchInput from '../components/LocationSearch/SearchInput';
-// import MapContainer from './Map/MapContainer';
+import MapContainer from './Map/MapContainer';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { location: {} }
+  }
+
   render() {
     return (
       <div className="App">
@@ -36,7 +41,9 @@ class App extends Component {
             <div className={classes.addressRow} >
               <div className={classes.Field} >
                 <label>Katuosoite:</label>
-                <SearchInput placeholder="Katuosoite" />
+                <SearchInput 
+                  placeholder="Katuosoite"
+                  handleSelectLocation={(location) => this.setState({ location })} />
               </div>
               <div className={classes.Field} >
                 <label>Asunto:</label>
@@ -61,7 +68,7 @@ class App extends Component {
             </button>
           </div>
         </form>
-        {/* <MapContainer /> */}
+        <MapContainer/>
       </div>
     );
   }

@@ -19,6 +19,7 @@ class SearchInput extends React.Component {
             const selectedLocation = { lat, lng };
             this.setState({ location: selectedLocation });
             console.log(this.state.location);
+            this.props.handleSelectLocation(selectedLocation);
          })
    }
    render() {
