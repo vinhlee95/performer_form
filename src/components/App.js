@@ -5,6 +5,7 @@ import InfoLogo from '../images/information-button.svg';
 import LocationLogo from '../images/location-button.svg';
 import CheckLogo from '../images/check-button.svg';
 import SearchInput from '../components/LocationSearch/SearchInput';
+// import MapContainer from './Map/MapContainer';
 
 class App extends Component {
   render() {
@@ -60,6 +61,7 @@ class App extends Component {
             </button>
           </div>
         </form>
+        {/* <MapContainer /> */}
       </div>
     );
   }

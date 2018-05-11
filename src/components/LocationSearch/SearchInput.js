@@ -5,7 +5,7 @@ import classes from './SearchInput.css';
 class SearchInput extends React.Component {
    constructor(props) {
       super(props);  
-      this.state = { address: '' }
+      this.state = { address: '', location: { lat: '', lng: '' } };
    }
 
    handleChange = (address) => {
@@ -14,9 +14,12 @@ class SearchInput extends React.Component {
 
    handleSelect = (address) => {
       geocodeByAddress(address)
-         .then(results => {getLatLng(results[0]); console.log(results) })
-         .then(latLng => console.log('Success', latLng))
-         .catch(error => console.error('Error', error))
+         .then(results => getLatLng(results[0]))
+         .then(({lat, lng}) => {
+            const selectedLocation = { lat, lng };
+            this.setState({ location: selectedLocation });
+            console.log(this.state.location);
+         })
    }
    render() {
 
@@ -47,7 +50,7 @@ class SearchInput extends React.Component {
                                  :
                                  classes.suggestionItem }
                            >
-                              {suggestion.formattedSuggestion.mainText}
+                              {suggestion.description}
                            </span>
                         </div>
                      )
