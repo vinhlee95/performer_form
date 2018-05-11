@@ -8,6 +8,7 @@
 
 .autocompleteDropdown {
    width: 100%;
+   padding-left: 10px;
 }
 
 .item {
@@ -17,7 +18,10 @@
    display: block;
    width: 100%;
    cursor: pointer;
-   background-color: rgb(152, 228, 152);
    border-radius: 3px; 
    padding: 5px 0;
+   transition: .3s;
+}
+.activeSuggestionItem:hover {
+   background-color: rgb(152, 228, 152);   
 }
