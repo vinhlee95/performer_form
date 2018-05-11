@@ -29,26 +29,29 @@ class SearchInput extends React.Component {
          {({ getInputProps, suggestions, getSuggestionItemProps }) => (
             <div>
                <input
-                  {  
-                     ...getInputProps({
-                        placeholder: 'Paikkakunta',
-                     })
-                  }
+                  { ...getInputProps({}) }
+                  placeholder={this.props.placeholder}
                   className={classes.searchInput}
                />
-               <div className="autocomplete-dropdown-container">
-               {suggestions.map(suggestion => {
-                  const className = suggestion.active ? 'suggestion-item--active' : 'suggestion-item';
-                  // inline style for demonstration purpose
-                  const style = suggestion.active
-                              ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-                              : { backgroundColor: '#ffffff', cursor: 'pointer' };
-                  return (
-                     <div {...getSuggestionItemProps(suggestion, { className, style })}>
-                     <span>{suggestion.description}</span>
-                     </div>
-                  )
-               })}
+               <div className={classes.autocompleteDropdown} >
+                  {suggestions.map(suggestion => {
+                     return (
+                        <div
+                           className={classes.item} 
+                           {...getSuggestionItemProps(suggestion)}>
+                           <span
+                              className={
+                                 suggestion.active 
+                                 ? 
+                                 classes.activeSuggestionItem
+                                 :
+                                 classes.suggestionItem }
+                           >
+                              {suggestion.formattedSuggestion.mainText}
+                           </span>
+                        </div>
+                     )
+                  })}
                </div>
             </div>
          )}

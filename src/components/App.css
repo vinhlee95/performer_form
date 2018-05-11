@@ -6,6 +6,12 @@
    padding: 10px 10px;
 }
 
+.container {
+   display: block;
+   width: 90%;
+   margin: 0 auto;
+}
+
 label {
    font-weight: 600;   
 }
@@ -37,12 +43,14 @@ img {
 }
 
 .addressRow {
-   grid-template-columns: 3fr 1fr;
+   grid-template-columns: 60% 30%;
    margin-bottom: 20px;
+   justify-content: space-between;
 }
 
 .locationRow {
-   grid-template-columns: 30% 62%;
+   grid-template-columns: 30% 60%;
+   justify-content: space-between;
 }
 
 .submitButton {

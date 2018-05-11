@@ -11,52 +11,54 @@ class App extends Component {
     return (
       <div className="App">
         <form className={classes.Form} >
-          <div className={classes.title}>
-            <img src={InfoLogo} alt="infoLogo" />
-            <h2>Käyttäjätiedot:</h2>
-          </div>
-          <div className={classes.nameRow}>
-            <div className={classes.Field} >
-              <label>Etunimi:</label>
-              <Input placeholder="Etunimi" />
+          <div className={classes.container}>
+            <div className={classes.title}>
+              <img src={InfoLogo} alt="infoLogo" />
+              <h2>Käyttäjätiedot:</h2>
+            </div>
+            <div className={classes.nameRow}>
+              <div className={classes.Field} >
+                <label>Etunimi:</label>
+                <Input placeholder="Etunimi" />
+              </div>
+
+              <div className={classes.Field}>
+                <label>Sukunimi:</label>
+                <Input placeholder="Sukunimi" />
+              </div>
+            </div>
+            
+            <div className={classes.title}>
+              <img src={LocationLogo} alt="locationLogo" />
+              <h2>Kotipaikka</h2>
+            </div>
+            <div className={classes.addressRow} >
+              <div className={classes.Field} >
+                <label>Katuosoite:</label>
+                <SearchInput placeholder="Katuosoite" />
+              </div>
+              <div className={classes.Field} >
+                <label>Asunto:</label>
+                <Input />
+              </div>
+            </div>
+            
+            <div className={classes.locationRow} >
+              <div className={classes.Field} >
+                <label>Postinumero:</label>
+                <Input />
+              </div>
+              <div className={classes.Field} >
+                <label>Paikkakunta:</label>
+                <SearchInput placeholder="Paikkakunta" className="locationInput" />
+              </div>
             </div>
 
-            <div className={classes.Field}>
-              <label>Sukunimi:</label>
-              <Input placeholder="Sukunimi" />
-            </div>
+            <button type="submit" className={classes.submitButton} >
+            <img src={CheckLogo} alt="checkLogo" />
+            Tallenna tiedot
+            </button>
           </div>
-          
-          <div className={classes.title}>
-            <img src={LocationLogo} alt="locationLogo" />
-            <h2>Kotipaikka</h2>
-          </div>
-          <div className={classes.addressRow} >
-            <div className={classes.Field} >
-              <label>Katuosoite:</label>
-              <Input />
-            </div>
-            <div className={classes.Field} >
-              <label>Asunto:</label>
-              <Input />
-            </div>
-          </div>
-          
-          <div className={classes.locationRow} >
-            <div className={classes.Field} >
-              <label>Postinumero:</label>
-              <Input />
-            </div>
-            <div className={classes.Field} >
-              <label>Paikkakunta:</label>
-              <SearchInput />
-            </div>
-          </div>
-
-          <button type="submit" className={classes.submitButton} >
-          <img src={CheckLogo} alt="checkLogo" />
-          Tallenna tiedot
-          </button>
         </form>
       </div>
     );
